@@ -33,20 +33,25 @@ while True:
                    else:
                        break
 
+           #Placing the entry dictionary
+           user_information_hub[user_name] ={
+               "current_age": current_age
+           }
            break  # If there are no errors, break the loop
+
        except:
            print("Wrong Format")
-          
 
+    # Generate a command that ask users if they would like to input another entry
     more_data=input("Would you like to store more info? ")
 
     if more_data == "Yes":
         print ("Add new entries")
     elif more_data == "No":
-        break
+        break #If they would like to end, break the first loop
+
+print(user_information_hub)
 #Also print an error statement if there is a number inputted in the name and an alphabet for the age
-#Generate a command that ask users if they would like to input another entry
-#If they would like to end, break the first loop
 #Create a command that arranges every entry from oldest to youngest when printed.
 
 
