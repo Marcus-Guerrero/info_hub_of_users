@@ -1,5 +1,4 @@
 #Create a dictionary array for placing multiple entries
-
 user_information_hub ={}
 
 #Place a first loop for another entry by the users if stated yes
@@ -34,7 +33,7 @@ while True:
                        break
 
            #Placing the entry dictionary
-           user_information_hub[user_name] ={
+           user_information_hub[user_name] = {
                "current_age": current_age
            }
            break  # If there are no errors, break the loop
@@ -50,8 +49,15 @@ while True:
     elif more_data == "No":
         break #If they would like to end, break the first loop
 
-print(user_information_hub)
-#Also print an error statement if there is a number inputted in the name and an alphabet for the age
-#Create a command that arranges every entry from oldest to youngest when printed.
+old= 0
+
+for info in user_information_hub: #iterate the dictionary array
+    # Create a command that prints the oldest users information, e.g. name and age
+    if user_information_hub [info]["current_age"]>old:
+        old= user_information_hub [info]["current_age"]
+print (info, ":", old)
+
+
+
 
 
