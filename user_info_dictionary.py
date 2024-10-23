@@ -42,12 +42,18 @@ while True:
            print("Wrong Format")
 
     # Generate a command that ask users if they would like to input another entry
-    more_data=input("Would you like to store more info? ")
 
-    if more_data == "Yes":
-        print ("Add new entries")
-    elif more_data == "No":
-        break #If they would like to end, break the first loop
+    while True:
+        more_data = input("Would you like to store more info? ")
+        if more_data == "Yes":
+           print ("Add new entries")
+           break
+        elif more_data == "No":
+           break #If they would like to end, break the first loop
+        elif more_data != "Yes" and more_data !="No":
+           print ("Wrong command, please try again")
+    if more_data== "No":
+       break
 
 old= 0
 
