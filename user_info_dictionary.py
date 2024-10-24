@@ -12,14 +12,15 @@ while True:
                # Print an error statement wherein the maximum characters for the name must not exceed 50 and less than 2, and the age must not exceed the maximum value of 200.
 
                user_name=input("What is your given name? ")
-
-               if len(user_name):
-                   if len(user_name) > 50:
+               name=user_name.title()
+               if len(name):
+                   if len(name) > 50:
                        print("Must not exceed 50 characters")
-                   elif len(user_name) < 2:
+                   elif len(name) < 2:
                        print("Must be more than one character")
                    else:
                        break
+
 
            while True:
                current_age=int(input("what is your current age as of the moment? "))
@@ -33,7 +34,7 @@ while True:
                        break
 
            #Placing the entry dictionary
-           user_information_hub[user_name] = {
+           user_information_hub[name] = {
                "current_age": current_age
            }
            break  # If there are no errors, break the loop
@@ -43,7 +44,7 @@ while True:
 
     # Generate a command that ask users if they would like to input another entry
 
-    while True:
+    while True: #Adding loop for adding new entries
         more_data = input("Would you like to store more info? ")
         if more_data == "Yes":
            print ("Add new entries")
@@ -57,13 +58,12 @@ while True:
 
 old= 0
 
-for info in user_information_hub: #iterate the dictionary array
+for name, age in user_information_hub.items(): #iterate the dictionary array
     # Create a command that prints the oldest users information, e.g. name and age
-    if user_information_hub [info]["current_age"]>old:
-        old= user_information_hub [info]["current_age"]
-print (info, ":", old)
+    if age["current_age"]>old:
+        old= age["current_age"]
+        age_group = {name}
+    elif age["current_age"] == old:
+        age_group.add(name)
 
-
-
-
-
+print (f"The oldest is/are {age_group}, with a current age of {old}")
