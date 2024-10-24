@@ -58,12 +58,12 @@ while True:
 
 old= 0
 
-for name, age in user_information_hub.items(): #iterate the dictionary array
+for similar_name, age in user_information_hub.items(): #iterate the dictionary array
     # Create a command that prints the oldest users information, e.g. name and age
     if age["current_age"]>old:
         old= age["current_age"]
-        age_group = {name}
+        age_group = {similar_name}
     elif age["current_age"] == old:
-        age_group.add(name)
+        age_group.add(similar_name)
 
 print (f"The oldest is/are {age_group}, with a current age of {old}")
